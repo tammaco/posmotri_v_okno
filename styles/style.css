@@ -91,7 +91,7 @@ ol {
 
 .content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(2, auto);
   justify-content: start;
   align-items: end;
   gap: 30px;
@@ -118,7 +118,7 @@ ol {
 
 .search-form {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:  repeat(3, auto);
   align-items: end;
   gap: 40px;
 }
@@ -212,7 +212,7 @@ ol {
   align-items: center;
 }
 
-.search-form__checkbox:checked ~ .search-form__pseudo-checkbox:first-of-type::after {
+.search-form__checkbox:checked ~ .search-form__pseudo-checkbox::after {
   content: '';
   inline-size: 15px;
   block-size: 15px;
@@ -254,16 +254,9 @@ ol {
 
   gap: 30px;
   block-size: 298px;
-  overflow-y: scroll;
+  overflow-y: auto;
   scrollbar-width: thin;
   position: relative;
-}
-
-.cards-list-item-template {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 2px;
 }
 
 .content__list-item {
@@ -334,6 +327,9 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   color: #FFFFFF;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden;
 }
 
 .content__video-card-description {
